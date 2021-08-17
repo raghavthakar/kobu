@@ -12,16 +12,13 @@
     <arg name="height" default="0.1"/>
 
     <!-- LOAD ROBOT -->
-    <param name="/robot1/robot_description" command="$(find xacro)/xacro $(find kobu_description)/urdf/kobu_circle_body.xacro"/>
+    <param name="robot_description" command="$(find xacro)/xacro $(find kobu_description)/urdf/kobu_circle_body.xacro"/>
 
     <!-- SPAWN ROBOT -->
-    <node name="spawn_kobu" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
-        args="-urdf -param robot_description -model kobu -x $(arg x) -y $(arg y) -z $(arg z)
-        -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"/>
+    <node name="spawn_model" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+          args="-urdf -param robot_description -model kobu -x $(arg x) -y $(arg y) -z $(arg z)"/>
 
-    <!-- PUBLISH THE JOINT STATES -->
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
-    respawn="false" output="screen">
-    </node>
+      respawn="false" output="screen"/>
 
 </launch>
