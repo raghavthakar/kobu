@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+
+  <include file="$(find node_counting_alg)/launch/world_init.launch">
+    <arg name="world" value="easy" />
+  </include>
+
+
+  <param name="lin_vel" value="1.5"/>
+  <param name="ang_vel" value=".3"/>
+
+
+  <param name="map_size" value="11"/>
+
+
+  <param name="num_robot" value="4"/>
+  <node name="common_mapper" pkg="node_counting_alg" type="common_mapper_node" output="screen"/>
+
+  <!-- 1 -->
+  <include file="$(find node_counting_alg)/launch/spawn_robot.launch">
+    <arg name="ns" value="robot1"/>
+    <arg name="robID" value="1"/>
+
+    <arg name="X" value="10"/>
+    <arg name="Y" value="10"/>
+    <arg name="Z" value="0"/>
+
+    <arg name="des_x" value="5"/>
+    <arg name="des_y" value="5"/>
+
+    <arg name="random_planning" value="false"/>
+    <arg name="pkg" value="node_counting_alg"/>
+    <arg name="xacro_file" value="urdf/kobu.xacro"/>
+    <arg name="xacro_name" value="hol"/>
+  </include>
+
+  <!-- 2 -->
+  <include file="$(find node_counting_alg)/launch/spawn_robot.launch">
+    <arg name="ns" value="robot2"/>
+    <arg name="robID" value="2"/>
+
+    <arg name="X" value="5"/>
+    <arg name="Y" value="-6"/>
+    <arg name="Z" value="0"/>
+
+    <arg name="des_x" value="5"/>
+    <arg name="des_y" value="-5"/>
+
+    <arg name="random_planning" value="false"/>
+    <arg name="pkg" value="node_counting_alg"/>
+    <arg name="xacro_file" value="urdf/kobu.xacro"/>
+    <arg name="xacro_name" value="hol"/>
+  </include>
+
+  <!-- 3 -->
+  <include file="$(find node_counting_alg)/launch/spawn_robot.launch">
+    <arg name="ns" value="robot3"/>
+    <arg name="robID" value="3"/>
+
+    <arg name="X" value="-6"/>
+    <arg name="Y" value="10"/>
+    <arg name="Z" value="0"/>
+
+    <arg name="des_x" value="-5"/>
+    <arg name="des_y" value="5"/>
+
+    <arg name="random_planning" value="false"/>
+    <arg name="pkg" value="node_counting_alg"/>
+    <arg name="xacro_file" value="urdf/kobu.xacro"/>
+    <arg name="xacro_name" value="hol"/>
+  </include>
+
+  <!-- 4 -->
+  <include file="$(find node_counting_alg)/launch/spawn_robot.launch">
+    <arg name="ns" value="robot4"/>
+    <arg name="robID" value="4"/>
+
+    <arg name="X" value="-10"/>
+    <arg name="Y" value="-12"/>
+    <arg name="Z" value="0"/>
+
+    <arg name="des_x" value="-5"/>
+    <arg name="des_y" value="-5"/>
+
+    <arg name="random_planning" value="false"/>
+    <arg name="pkg" value="node_counting_alg"/>
+    <arg name="xacro_file" value="urdf/kobu.xacro"/>
+    <arg name="xacro_name" value="hol"/>
+  </include>
+
+</launch>

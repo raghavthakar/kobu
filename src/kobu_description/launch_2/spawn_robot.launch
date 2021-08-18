@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+  
+  <arg name="ns" default="robot1"/>
+  <arg name="robID" default="1"/>
+  <arg name="X" default="1"/>
+  <arg name="Y" default="1"/>
+  <arg name="Z" default="0.1"/>
+  <arg name="des_x" default="0"/>
+  <arg name="des_y" default="0"/>
+  <arg name="random_planning" default="false"/>
+  <arg name="pkg" default="test_alg"/>
+  <arg name="xacro_file" default="urdf/robot_hol.xacro"/>
+  <arg name="xacro_name" default="nonhol"/>
+  <arg name="xacro_pkg" value="$(eval find(pkg))" />
+
+
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(arg xacro_pkg)/$(arg xacro_file)'" />
+
+
+  
+  <group ns="$(arg ns)">
+
+   
+    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(arg xacro_pkg)/$(arg xacro_file)'" />
+    <param name="tf_prefix" value="$(arg ns)"/>
+    <param name="robot_ID" value="$(arg robID)"/>
+    <param name="spawnX" value="$(arg X)"/>
+    <param name="spawnY" value="$(arg Y)"/>
+    <param name="des_pos_x" value="$(arg des_x)"/>
+    <param name="des_pos_y" value="$(arg des_y)"/>
+    <param name="random" value="$(arg random_planning)"/>
+
+    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" args="-urdf -model $(arg ns)/$(arg xacro_name) -param robot_description -x  $(arg X) -y  $(arg Y) -z  $(arg Z)"/>
+
+    <node name="go_to_point_switch" pkg="node_counting_alg" type="go_to_point_service.py"/>
+    <node name="controller" pkg="node_counting_alg" type="controller_node.py"/>
+    <node name="planner" pkg="node_counting_alg" type="planner_node"/>
+  </group>
+
+</launch>
