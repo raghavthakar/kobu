@@ -140,7 +140,7 @@
   <gazebo>
     <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
       <updateRate>100.0</updateRate>
-      <robotNamespace>kobu</robotNamespace>
+      <robotNamespace></robotNamespace>
       <leftJoint>left_wheel_to_base_link</leftJoint>
       <rightJoint>right_wheel_to_base_link</rightJoint>
       <wheelSeparation>0.5</wheelSeparation>
