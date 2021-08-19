@@ -12,5 +12,8 @@
     <param name="tf_prefix" value="$(arg ns)"/>
 
     <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" args="-urdf -model $(arg ns)/kobu -param robot_description -x  $(arg X) -y  $(arg Y) -z  $(arg Z)"/>
+
+    <node name="move_distance_server" pkg="kobu_control" type="move_distance_server"/>
+    <node name="move_distance_client" pkg="kobu_control" type="move_distance_client"/>
   </group>
 </launch>

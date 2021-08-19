@@ -19,7 +19,7 @@ const double DT=0.15;
 class Mover
 {
   ros::NodeHandle node_handle;
-  std::string odom_topic="/kobu/odom";
+  std::string odom_topic="/robot1/kobu/odom";
   nav_msgs::OdometryConstPtr current_odom;
   ros::ServiceServer move_server;
   ros::Publisher twist_publisher;
@@ -99,7 +99,7 @@ public:
                                     &Mover::move, this);
 
     twist_publisher = node_handle.advertise
-                      <geometry_msgs::Twist>("/kobu/cmd_vel", 10);
+                      <geometry_msgs::Twist>("/robot1/kobu/cmd_vel", 10);
 
 
     //linear velocity will always be this

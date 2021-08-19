@@ -11,7 +11,7 @@ int main(int argc, char **argv)
   ros::NodeHandle n;
 
   ros::ServiceClient client = n.serviceClient
-                    <kobu_control::MoveDistance>("move_distance");
+                    <kobu_control::MoveDistance>("/robot1/move_distance");
 
   //Instantiate the service class
   kobu_control::MoveDistance srv;
