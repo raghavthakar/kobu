@@ -93,7 +93,7 @@ class Mover
   }
 
 public:
-  Mover()
+  Mover(char** argv)
   {
     move_server = node_handle.advertiseService("move_distance",
                                     &Mover::move, this);
@@ -157,7 +157,7 @@ public:
 int main(int argc, char** argv)
 {
   ros::init(argc, argv, "move_distance_server");
-  Mover mover;
+  Mover mover(argv);
   ros::spin();
   return 0;
 }
