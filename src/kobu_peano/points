@@ -1,0 +1,5 @@
+line 23:
+    right(45)->top left to bottrom right (-220, 220)
+    right(-45)->bottom left to top right (-220, -220)
+    right(135)->top right to bottom left (220, 220)
+    right(-135)->bottom right to top left (220, -220)

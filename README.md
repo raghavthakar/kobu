@@ -11,3 +11,6 @@ the robot navigate to a waypoint using:
 
 Waypoints have been hardcoded into `move_distance_client` which can be
 run to visualise the same.
+
+### Test Peano curve for 4 robots
+Navigate to `src/kobu_peano/` and run `python3 peano.py` to visualise the curve.
