@@ -7,11 +7,16 @@ int main(int argc, char **argv)
   target_point.x=-10;
   target_point.y=3;
 
+  std::string move_distance_service_name;
+  move_distance_service_name.append("/");
+  move_distance_service_name.append(argv[1]);
+  move_distance_service_name.append("/move_distance");
+
   ros::init(argc, argv, "move_distance_client");
   ros::NodeHandle n;
 
   ros::ServiceClient client = n.serviceClient
-                    <kobu_control::MoveDistance>("/robot1/move_distance");
+                    <kobu_control::MoveDistance>(move_distance_service_name);
 
   //Instantiate the service class
   kobu_control::MoveDistance srv;

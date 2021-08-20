@@ -19,7 +19,8 @@ const double DT=0.15;
 class Mover
 {
   ros::NodeHandle node_handle;
-  std::string odom_topic="/robot1/kobu/odom";
+  std::string odom_topic;
+  std::string twist_topic;
   nav_msgs::OdometryConstPtr current_odom;
   ros::ServiceServer move_server;
   ros::Publisher twist_publisher;
@@ -95,12 +96,19 @@ class Mover
 public:
   Mover(char** argv)
   {
+    odom_topic=odom_topic.append("/");
+    odom_topic=odom_topic.append(argv[1]);
+    odom_topic=odom_topic.append("/kobu/odom");
+
+    twist_topic=twist_topic.append("/");
+    twist_topic=twist_topic.append(argv[1]);
+    twist_topic=twist_topic.append("/kobu/cmd_vel");
+
     move_server = node_handle.advertiseService("move_distance",
                                     &Mover::move, this);
 
     twist_publisher = node_handle.advertise
-                      <geometry_msgs::Twist>("/robot1/kobu/cmd_vel", 10);
-
+                      <geometry_msgs::Twist>(twist_topic, 10);
 
     //linear velocity will always be this
     twist_message.linear.x=BASE_LINEAR_VEL;
