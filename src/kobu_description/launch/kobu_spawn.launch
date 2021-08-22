@@ -14,6 +14,7 @@
     <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" args="-urdf -model $(arg ns)/kobu -param robot_description -x  $(arg X) -y  $(arg Y) -z  $(arg Z)"/>
 
     <node name="move_distance_server" pkg="kobu_control" type="move_distance_server" args="$(arg ns)"/>
-    <node name="move_distance_client" pkg="kobu_control" type="move_distance_client" args="$(arg ns)"/>
+    <!-- <node name="move_distance_client" pkg="kobu_control" type="move_distance_client" args="$(arg ns)"/> -->
+    <node name="curve_follow" pkg="kobu_control" type="curve_follow.py" args="$(arg ns)"/>
   </group>
 </launch>

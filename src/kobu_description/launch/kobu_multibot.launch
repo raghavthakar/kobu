@@ -22,12 +22,12 @@
     </include>
 
     <!-- 2 -->
-    <include file="$(find kobu_description)/launch/kobu_spawn.launch">
+    <!-- <include file="$(find kobu_description)/launch/kobu_spawn.launch">
         <arg name="ns" value="robot2"/>
         <arg name="X" value="-0.5"/>
         <arg name="Y" value="0.5"/>
         <arg name="Z" value="0"/>
-    </include>
+    </include> -->
 
     <!-- 3 -->
     <include file="$(find kobu_description)/launch/kobu_spawn.launch">
