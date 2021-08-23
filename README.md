@@ -40,7 +40,7 @@ roslaunch kobu_description kobu_multibot.launch
 ```
 
 To visualise the curve, 
-Navigate to `src/kobu_peano/` and run `python3 peano.py`.
+Navigate to `src/kobu_peano/peano` or `src/kobu_peano/hilbert` and run `python3 peano.py` or `python3 hilbert.py`.
 
 
 ## Contributing
