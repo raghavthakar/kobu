@@ -6,6 +6,9 @@
 Multibot extraterrestrial exploration using Peano's curve
 ![](header.png)
 
+## Watch it in Action
+https://www.youtube.com/watch?v=NxmvM7g0AX4
+
 ## Prerequisites
 - ROS (Tested on Melodic Morenia)
 - Linux (Tested on Ubuntu 18.04)
@@ -20,8 +23,6 @@ git clone https://github.com/raghavthakar/kobu.git
 cd ..
 catkin_make
 ```
-
-
 
 ## Usage example
 Before running the following, make sure to source the workspace
