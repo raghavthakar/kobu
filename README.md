@@ -1,6 +1,9 @@
 # kobu
 Multibot exploration using Peano's curve
 
+### Watch it in Action
+https://www.youtube.com/watch?v=NxmvM7g0AX4
+
 ### Test Waypoint Navigation
 Make sure to build and source the workspace. Then, run:
 `roslaunch kobu_description gazebo.launch`
