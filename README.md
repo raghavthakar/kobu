@@ -6,6 +6,8 @@
 Multibot extraterrestrial exploration using Peano's curve
 ![](header.png)
 
+## Read the paper
+
 ## Watch it in Action
 https://www.youtube.com/watch?v=NxmvM7g0AX4
 
