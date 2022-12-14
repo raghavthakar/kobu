@@ -6,8 +6,8 @@
 Multibot extraterrestrial exploration using Peano's curve
 ![](header.png)
 
-## Read the paper
-  [a link](https://github.com/raghavthakar/kobu/blob/main/kobu.pdf)
+## Literature
+  [Read the paper here](https://github.com/raghavthakar/kobu/blob/main/kobu.pdf)
 
    
 ## Watch it in Action
